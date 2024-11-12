@@ -1,21 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Taskade</title>
-</head>
-<body>
-    <h1>Tasks</h1>
-    <div class="tasks">
-        {% for task in tasks %}
-            <div class="task">
-                <h2><a href=""> {{task.name}} </a></h2>
-                <p> {{task.priority}} </p>
-                <p> {{task.due_date}} </p>
-                <p> {{task.created_date}} </p>
-            </div>
-        {% endfor %}
-    </div>
-</body>
-</html>
+{% extends 'base_layout.html' %}
+
+{% block content %}
+<h1>Tasks</h1>
+<div class="tasks">
+    {% for task in tasks %}
+        <div class="task">
+            <h2><a href=""> {{task.name}} </a></h2>
+            <p> {{task.priority}} </p>
+            <p> {{task.due_date}} </p>
+            <p> {{task.created_date}} </p>
+        </div>
+    {% endfor %}
+</div>
+{% endblock content %}
