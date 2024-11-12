@@ -7,5 +7,15 @@
 </head>
 <body>
     <h1>Tasks</h1>
+    <div class="tasks">
+        {% for task in tasks %}
+            <div class="task">
+                <h2><a href=""> {{task.name}} </a></h2>
+                <p> {{task.priority}} </p>
+                <p> {{task.due_date}} </p>
+                <p> {{task.created_date}} </p>
+            </div>
+        {% endfor %}
+    </div>
 </body>
 </html>
