@@ -9,5 +9,5 @@ def index(request):
     return render(request, "taskade/index.html", {'tasks': tasks})
 
 def detail(request, id):
-    task = Task.objects.filter(id=id)
-    return HttpResponse(id)
+    task = Task.objects.get(id=id)
+    return render(request, "taskade/detail.html", {'task': task})

@@ -5,10 +5,10 @@
 <div class="tasks">
     {% for task in tasks %}
         <div class="task">
-            <h2><a href=""> {{task.name}} </a></h2>
-            <p> {{task.priority}} </p>
-            <p> {{task.due_date}} </p>
-            <p> {{task.created_date}} </p>
+            <h2><a href="{% url "tasks:detail" id=task.id %}"> {{task.name}} </a></h2>
+            <p> Priority: {{task.priority}} </p>
+            <p> Due Date: {{task.due_date}} </p>
+            <p> Created: {{task.created_date}} </p>
         </div>
     {% endfor %}
 </div>
