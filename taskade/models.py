@@ -8,6 +8,7 @@ class Task(models.Model):
     created_date = models.DateField(auto_now_add=True)
     due_date = models.DateField()
     priority = models.IntegerField()
+    thumb = models.ImageField(default="default.png", blank=True)
     # add in owner later
 
     def __str__(self):

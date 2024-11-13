@@ -3,9 +3,11 @@
 {% block content %}
 <div class="task-detail">
     <div class="task">
+        <img src="{{task.thumb.url}}" alt="">
         <h2>{{task.name}} </h2>
         <p>Priority: {{task.priority}}</p>
         <p>Due Date: {{task.due_date}}</p>
+
     </div>
 </div>
 
