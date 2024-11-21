@@ -1,7 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Task
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
+from . import forms
 # Create your views here.
 
 def index(request):
@@ -14,4 +15,11 @@ def detail(request, id):
 
 @login_required(login_url="/accounts/login/")
 def create(request):
-    return render(request, "taskade/create.html")
+    if request.method == 'POST':
+        form = forms.CreateTask(request.POST, request.FILES)
+        if form.is_valid():
+            # save to DB
+            return redirect("tasks:index")
+    else:
+        form = forms.CreateTask()
+    return render(request, "taskade/create.html", {"form": form})
