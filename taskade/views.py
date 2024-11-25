@@ -19,6 +19,9 @@ def create(request):
         form = forms.CreateTask(request.POST, request.FILES)
         if form.is_valid():
             # save to DB
+            instance = form.save(commit=False)
+            instance.creator = request.user
+            instance.save()
             return redirect("tasks:index")
     else:
         form = forms.CreateTask()
