@@ -10,7 +10,6 @@
 </head>
 <body>
     <div class="wrapper">
-        <header><a href="{% url "home" %}"><img src="{% static 'logo.png' %}" alt=""></a></header>
         <nav>
             <ul>
                 {% if user.is_authenticated %}
@@ -29,8 +28,10 @@
             </ul>
 
         </nav>
-        {% block content %}
-        {% endblock content %}
+        <div class="content">
+            {% block content %}
+            {% endblock content %}
+        </div>
         
     </div>
 </body>

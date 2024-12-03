@@ -4,11 +4,20 @@ body {
     background-color: #0f121f;
     background-image: url(stars.png);
     background-repeat: no-repeat;
-    color: #fff
+    color: #fff;
+    height:100vh;
+    width: 100vw;
+    margin: 0;
 }
 
 body * {
     font-family:'Courier New', Courier, monospace
+}
+
+div.wrapper {
+    display: flex;
+    width: auto;
+    height: auto;
 }
 
 h1, h2, h3, h4, h5 {
@@ -30,4 +39,8 @@ div.task {
     border: solid pink;
     padding: 20px 30px;
     margin: 20px 0;
+}
+
+nav {
+    width: 400px;
 }
