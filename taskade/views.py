@@ -26,3 +26,10 @@ def create(request):
     else:
         form = forms.CreateTask()
     return render(request, "taskade/create.html", {"form": form})
+
+def complete(request, id):
+    if request.method == 'POST':
+        task = Task.objects.get(id=id)
+        task.completed = True
+        task.save()
+        return redirect('tasks:index')

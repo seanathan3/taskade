@@ -11,6 +11,7 @@ class Task(models.Model):
     priority = models.IntegerField()
     thumb = models.ImageField(default="default.png", blank=True)
     creator = models.ForeignKey(User, default=None, on_delete=models.CASCADE)
+    completed = models.BooleanField(default=False)
 
     def __str__(self):
         return self.name
