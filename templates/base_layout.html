@@ -10,7 +10,7 @@
 </head>
 <body>
     <div class="wrapper">
-        <h1><a href="{% url "home" %}"><img src="{% static 'logo.png' %}" alt=""></a></h1>
+        <header><a href="{% url "home" %}"><img src="{% static 'logo.png' %}" alt=""></a></header>
         <nav>
             <ul>
                 {% if user.is_authenticated %}

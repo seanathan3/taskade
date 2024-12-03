@@ -21,3 +21,13 @@ a, a:hover, a:visited {
     text-decoration: none;
 }
 
+div.task-index-wrapper {
+    border: solid;
+    padding: 20px;
+}
+
+div.task {
+    border: solid pink;
+    padding: 20px 30px;
+    margin: 20px 0;
+}
