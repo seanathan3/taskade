@@ -17,7 +17,11 @@ body * {
 div.wrapper {
     display: flex;
     width: auto;
-    height: auto;
+    height: 100%;
+}
+
+div.content {
+    flex-grow: 1;
 }
 
 h1, h2, h3, h4, h5 {
@@ -33,6 +37,9 @@ a, a:hover, a:visited {
 div.task-index-wrapper {
     border: solid;
     padding: 20px;
+    height: 100%;
+    box-sizing: border-box;
+    flex-grow: 1;
 }
 
 div.task {
