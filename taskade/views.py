@@ -6,7 +6,7 @@ from . import forms
 # Create your views here.
 
 def index(request):
-    tasks = Task.objects.all().order_by("due_date")
+    tasks = Task.objects.filter(completed=False).order_by("due_date")
     return render(request, "taskade/index.html", {'tasks': tasks})
 
 def detail(request, id):
