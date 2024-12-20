@@ -11,15 +11,16 @@
 <body>
     <div class="wrapper">
         <nav>
-            <ul>
+            <ul class="nav-list">
                 {% if user.is_authenticated %}
-                <li>
+                <li>Hello, {{ user.username }}</li>
+                <li><a href="{% url 'tasks:create' %}" class="highlight">New Task</a></li>
+                <li class="logout-link">
                     <form class="logout-link" action={% url "accounts:logout" %} method="post">
                         {% csrf_token %}
                         <button type="submit">Logout</button>
                     </form>
                 </li>
-                <li><a href="{% url 'tasks:create' %}" class="highlight">New Task</a></li>
                 {% else %}
                 <li><a href="{% url 'accounts:login' %}">Login</a></li>
                 <li><a href="{% url 'accounts:signup' %}">Signup</a></li>
